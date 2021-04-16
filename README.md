@@ -9,7 +9,7 @@ The action will trigger on pushes to tags and exit neutrally otherwise.
 
 ## Variables
 
-- `TAG_NAME` — **Required.**
+- `GHR_TAG` — **Required.**
   Set the tag the artifacts will be pushed to
   if `GHR_REPLACE` is true it will be replaced if it exists
 
