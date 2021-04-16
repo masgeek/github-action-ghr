@@ -9,6 +9,10 @@ The action will trigger on pushes to tags and exit neutrally otherwise.
 
 ## Variables
 
+- `TAG_NAME` — **Required.**
+  Set the tag the artifacts will be pushed to
+  if `GHR_REPLACE` is true it will be replaced if it exists
+
 - `GHR_PATH` — **Required.**
   Path to the artifacts you want to upload.
   You can specify a file or a directory.
