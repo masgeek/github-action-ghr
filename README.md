@@ -9,6 +9,10 @@ The action will trigger on pushes to tags and exit neutrally otherwise.
 
 ## Variables
 
+- `GHR_TAG` — **Required.**
+  Set the tag the artifacts will be pushed to
+  if `GHR_REPLACE` is true it will be replaced if it exists
+
 - `GHR_PATH` — **Required.**
   Path to the artifacts you want to upload.
   You can specify a file or a directory.
@@ -18,6 +22,32 @@ The action will trigger on pushes to tags and exit neutrally otherwise.
   Compress files before uploading them.
   Can be either `gz`, `bz2`, `xz`, or `zip`.
   The correct file extension will be appended (e.g. `.tar.gz`, or `.zip`).
+
+- `GHR_TITLE` — **Optional.**
+  Set release title.
+
+- `GHR_TITLE_FILE` — **Optional.**
+  Set path to file that contains release title.
+
+- `GHR_BODY` — **Optional.**
+  Set release description.
+
+- `GHR_BODY_FILE` — **Optional.**
+  Set path to file that contains release description.
+
+- `GHR_REPLACE` — **Optional.**
+  Replace artifacts if already present.
+
+- `GHR_DRAFT` — **Optional.**
+  Release as draft (unpublish).
+
+- `GHR_PRERELEASE` — **Optional.**
+  Release as pre-release.
+
+- `GHR_REPOSITORY` - **Optional.**
+  Release to another repository.
+  Note: `${{ secrets.GITHUB_TOKEN }}` only grants access to the current repository.
+  If you're releasing to another repository, you'll need to use a personal access token with `repo` scope.
 
 - `GHR_DELETE` — **Optional.**
   Delete release and its git tag in advance if it exists.
@@ -32,7 +62,7 @@ The action will trigger on pushes to tags and exit neutrally otherwise.
 
 ## Usage example
 
-### YAML
+## Usage
 
 ```yaml
 on: push
