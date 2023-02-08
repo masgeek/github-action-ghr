@@ -49,6 +49,19 @@ The action will trigger on pushes to tags and exit neutrally otherwise.
   Note: `${{ secrets.GITHUB_TOKEN }}` only grants access to the current repository.
   If you're releasing to another repository, you'll need to use a personal access token with `repo` scope.
 
+- `GHR_DELETE` — **Optional.**
+  Delete release and its git tag in advance if it exists.
+  Can be either `true` or `false`
+
+- `GHR_REPLACE` — **Optional.**
+  Replace artifacts if it is already uploaded.
+  Can be either `true` or `false`
+
+- `GHR_PARALLELISM` — **Optional.**
+  Set amount of parallelism
+
+## Usage example
+
 ## Usage
 
 ```yaml
